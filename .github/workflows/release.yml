@@ -33,6 +33,7 @@ jobs:
 
   release:
     name: Release
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -55,7 +56,7 @@ jobs:
           git tag yop
           git push origin yop
           gh release delete ${{ env.VERSION }} -y || true
-          gh release create ${{ env.VERSION }} -t "Nightly" -n "$(git rev-parse HEAD | cut -c 1-7) | $(git log -1 --pretty=%B)" ${{ env.FILES }}
+          gh release create ${{ env.VERSION }} -t "yop" -n "$(git rev-parse HEAD | cut -c 1-7) | $(git log -1 --pretty=%B)" ${{ env.FILES }}
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           VERSION: "yop"
