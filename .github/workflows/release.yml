@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: "^1.17"
+
+      - name: Build
+        run: |
+          go build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: venboy
+          path: venboy.exe
+          retention-days: 1
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Retrieve artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: venboy
+          path: artifact
+
+      - name: Extract artifact
+        run: |
+          cp artifact/venboy.exe .
+
+      - name: GitHub Release
+        run: |
+          git tag -d yop || true
+          git push origin --delete yop || true
+          git tag yop
+          git push origin yop
+          gh release delete ${{ env.VERSION }} -y || true
+          gh release create ${{ env.VERSION }} -t "Nightly" -n "$(git rev-parse HEAD | cut -c 1-7) | $(git log -1 --pretty=%B)" ${{ env.FILES }}
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          VERSION: "yop"
+          FILES: venboy.exe
