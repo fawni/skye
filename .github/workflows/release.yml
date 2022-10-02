@@ -2,9 +2,8 @@ name: Release
 
 on:
   push:
-    branches:
-      - master
-  pull_request:
+    paths:
+      - "**.go"
   workflow_dispatch:
 
 jobs:
