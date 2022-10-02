@@ -1,5 +1,7 @@
 # venboy
 
+> **Warning** venboy **HAS** to be executed inside the Vencord folder.
+
 _hopefully_ retard-proof [Vencord](https://github.com/Vendicated/Vencord) installer for windows
 
 ## Installation
@@ -20,8 +22,6 @@ go build
 ```
 
 ## Usage
-
-> **Warning** venboy **HAS** to be executed inside the Vencord folder.
 
 ### install
 
