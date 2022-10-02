@@ -3,6 +3,7 @@ package cli
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 	"strings"
 
 	"github.com/AlecAivazis/survey/v2"
@@ -120,12 +121,8 @@ func getResourcesPath() string {
 }
 
 func getPatcherPath() string {
-	pwd, err := os.Getwd()
-	if err != nil {
-		log.Error("Failed to get current working directory: ", err)
-		os.Exit(1)
-	}
-	patcher := pwd + `\dist\patcher.js`
+	vencord := strings.ReplaceAll(os.Args[0], "\\"+filepath.Base(os.Args[0]), "")
+	patcher := vencord + `\dist\patcher.js`
 	if !fileExists(patcher) {
 		log.Error("patcher.js doesn't exist. Are you running from Vencord folder? Did you forget to build?")
 		os.Exit(1)
