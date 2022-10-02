@@ -23,13 +23,15 @@ go build
 
 ## Usage
 
-### install
+### Install
+
+Make sure to build first. ([instructions](https://github.com/Vendicated/Vencord#installing))
 
 ```sh
 .\venboy.exe
 ```
 
-### uninstall
+### Uninstall
 
 ```sh
 .\venboy.exe --uninstall
