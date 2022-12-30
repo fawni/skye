@@ -8,8 +8,8 @@ import (
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/fatih/color"
+	"github.com/fawni/venboy/log"
 	"github.com/urfave/cli/v2"
-	"github.com/x6r/venboy/log"
 )
 
 func Execute() {
@@ -52,7 +52,7 @@ func app() *cli.App {
 				log.Info("Installing...")
 
 				index := fmt.Sprintf("require(\"%s\");\nrequire(\"../app.asar\");",
-					strings.ReplaceAll(patcherPath, `\`, `\\`))
+					strings.ReplaceAll(patcherPath, `\`, `/`))
 				if err := os.WriteFile(appPath+"\\index.js", []byte(index), 0755); err != nil {
 					log.Error("Failed to write index.js: ", err)
 				}

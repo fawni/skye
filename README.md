@@ -8,7 +8,7 @@ _hopefully_ retard-proof [Vencord](https://github.com/Vendicated/Vencord) instal
 
 ### Binaries
 
-Download a binary from the [releases](https://github.com/x6r/venboy/releases)
+Download a binary from the [releases](https://github.com/fawni/venboy/releases)
 page.
 
 ### Build from source
@@ -16,7 +16,7 @@ page.
 Go 1.17 or higher required. ([install instructions](https://golang.org/doc/install.html))
 
 ```sh
-git clone https://github.com/x6r/venboy
+git clone https://github.com/fawni/venboy
 cd venboy
 go build
 ```

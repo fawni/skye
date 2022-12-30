@@ -1,4 +1,4 @@
-module github.com/x6r/venboy
+module github.com/fawni/venboy
 
 go 1.17
 
