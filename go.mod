@@ -1,4 +1,4 @@
-module github.com/fawni/venboy
+module github.com/fawni/skye
 
 go 1.17
 

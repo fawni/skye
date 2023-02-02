@@ -8,7 +8,7 @@ import (
 
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/fatih/color"
-	"github.com/fawni/venboy/log"
+	"github.com/fawni/skye/log"
 	"github.com/urfave/cli/v2"
 )
 

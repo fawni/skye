@@ -1,6 +1,6 @@
-# venboy
+# skye
 
-> **Warning** venboy **HAS** to be executed inside the Vencord folder.
+> **Warning** skye **HAS** to be executed inside the Vencord folder.
 
 _hopefully_ retard-proof [Vencord](https://github.com/Vendicated/Vencord) installer for windows
 
@@ -8,7 +8,7 @@ _hopefully_ retard-proof [Vencord](https://github.com/Vendicated/Vencord) instal
 
 ### Binaries
 
-Download a binary from the [releases](https://github.com/fawni/venboy/releases)
+Download a binary from the [releases](https://github.com/fawni/skye/releases)
 page.
 
 ### Build from source
@@ -16,8 +16,8 @@ page.
 Go 1.17 or higher required. ([install instructions](https://golang.org/doc/install.html))
 
 ```sh
-git clone https://github.com/fawni/venboy
-cd venboy
+git clone https://github.com/fawni/skye
+cd skye
 go build
 ```
 
@@ -28,13 +28,13 @@ go build
 Make sure to build first. ([instructions](https://github.com/Vendicated/Vencord#installing))
 
 ```sh
-.\venboy.exe
+.\skye.exe
 ```
 
 ### Uninstall
 
 ```sh
-.\venboy.exe --uninstall
+.\skye.exe --uninstall
 ```
 
 ## License

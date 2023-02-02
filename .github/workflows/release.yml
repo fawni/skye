@@ -26,8 +26,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: venboy
-          path: venboy.exe
+          name: skye
+          path: skye.exe
           retention-days: 1
 
   release:
@@ -41,12 +41,12 @@ jobs:
       - name: Retrieve artifact
         uses: actions/download-artifact@v2
         with:
-          name: venboy
+          name: skye
           path: artifact
 
       - name: Extract artifact
         run: |
-          cp artifact/venboy.exe .
+          cp artifact/skye.exe .
 
       - name: GitHub Release
         run: |
@@ -59,4 +59,4 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           VERSION: "yop"
-          FILES: venboy.exe
+          FILES: skye.exe
